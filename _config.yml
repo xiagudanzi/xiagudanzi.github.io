@@ -74,5 +74,5 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:xiagudanzi/xiagudanzi.github.io.git
-  branch: hexo
+  repo: https://github.com/xiagudanzi/xiagudanzi.github.io.git
+  branch: master
