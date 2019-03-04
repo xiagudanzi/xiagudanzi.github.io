@@ -75,4 +75,4 @@ theme: next
 deploy:
   type: git
   repo: git@github.com:xiagudanzi/xiagudanzi.github.io.git
-  branch: master
+  branch: hexo
