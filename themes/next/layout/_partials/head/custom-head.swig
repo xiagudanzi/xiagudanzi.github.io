@@ -32,9 +32,9 @@ Custom head.
         
         var fileObj = document.getElementById("file-upload-aotohexo").files[0];
         
-        //var url = "http://localhost:8088/hexo/file/up";
+        //var url = "https://localhost:8088/hexo/file/up";
 
-        var url = "http://45.76.168.248:8088/hexo/file/up";
+        var url = "https://45.76.168.248:8088/hexo/file/up";
         var form = new FormData(); // FormData 对象
         form.append("file", fileObj); // 文件对象
 
