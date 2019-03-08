@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -68,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="CAS Shiro 单点登录 权限控制,">
 
 
 
@@ -79,18 +77,21 @@
 
 
 
-<meta name="description" content="这是chw的一个测试文档，测试多人协作。">
-<meta name="keywords" content="java">
+<meta name="description" content="这篇文章，将从登陆、登出流程，详细讲解CAS+Shiro的执行过程。 开始uum：一个基于RBAC（Role-Based Access Control ）的权限系统（CAS client + shiro）sso：CAS server，负责认证授权  登陆流程: 这里将以时序图的方式展现。">
+<meta name="keywords" content="CAS Shiro 单点登录 权限控制">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于CAS的单点登录">
+<meta property="og:title" content="CAS Shiro 单点登录 权限控制">
 <meta property="og:url" content="https://xiagudanzi.github.io/2019/03/05/基于CAS的单点登录/index.html">
 <meta property="og:site_name" content="侠骨蛋子">
-<meta property="og:description" content="这是chw的一个测试文档，测试多人协作。">
+<meta property="og:description" content="这篇文章，将从登陆、登出流程，详细讲解CAS+Shiro的执行过程。 开始uum：一个基于RBAC（Role-Based Access Control ）的权限系统（CAS client + shiro）sso：CAS server，负责认证授权  登陆流程: 这里将以时序图的方式展现。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-05T06:28:12.535Z">
+<meta property="og:image" content="https://www.plantuml.com/plantuml/svg/xLbjKnDP5lw-lwBBsjfAB0WAEevHc840oXOwbW6TMc9PJUT2UkZSpdHtG6Phgu0HIJ2yE888uWkMC8mAmMM5641-ZEbEyyc_iEVUssaweHDqQpukLY7TzznpddlUpssEuxZlLOrNj7XK-Wjd_NI8ceJyN7v-HnzTDjuFvrVlXx2zoiSr6SUZtKYnNndlfypV4_hyAbVTmCNZKTZxzcqkCsIyNJBNzm_craEOYsXQJFNNrC2oJv2ZzbuiQuYJ-v52DwenHSIzrT5-mNSdAkKoQmUZ4_czzLpsNWXVXBV-VX4DL0iorXHPaf3IOFE1tLmrYBUn-Bc3iGbzVK6VVc2_gu2O44yzCDFRnhkHet1h-3A0pPTlr8YeoAsYf275kBzY95w7yEbFGyD__ISVZehu6gz5_bKZy2fNpy7l4AujNPFaNX73AYWs8eHmdSkw7DU0WFqHmcTAAKwUXDMuYXG0RYI7SZlBPdgP7KNVk0SGE-FHJbXc8CtzCMFdLPdp79A1yZ_lfjHuzqz8q7ozIBi6fX7462zvlFNrE2v98QplFTIJ4_cPLIEnRSozCBDlSZjxkVqbOpZzHORH4niENTVKgAhi4p3Jo7U0f5yKK3rPfgksBMge8lKFMqxRgaYxBSXoduZyjrKnNE_p-JpETVtUFBWpDHQd8bKLPSo9OQ-xIm0G__-6oqMlX1dHA-QZw1glgWEo4Wv6rO22mWXh8Yzz6fe67UQoayRaiZ6pPIwjwXEpnko6CR7-QUY1pH7uK4rIS4RoTtCfHM9qRxOGevo8HSAlLP87WaYBnne53Oxf2yijTv0Grv37MmRUJTJTgOcIwel5jGvHw4FQ9OK7RBYNFRNXe237aEhl0eVgkDHXp7pK5rUf7F8-jxS81z2VFmUdyTYn3nxXlGMedCnlyWe6hW5cAC9j0Dwmnnky54SLE9Vo2Z93K2wMKIhlzZ3muDObGlNVKaKChgEVuqZL0f1dq1tDoQKgX26ySX_tWSgP864flt0NKgc6u4zp_maOHq-yCXwjUTtjfxbeEH11GX-WEtYTCjF3WBICjNAP2NtjCI3ulBi0eW14ByWTu0SBk0aVsod03CPimYQ5q8R40VH15WI7T8j99rs4Loq5EzYvdwMiT61MvWWWpDhrDqlpVZqnNtGOIxfwXSTyBuf2g1IVIvzUiRU088jD8sHHMH5_uOdd7ulyc4t-BcOAY-nMcSEOAyFwy0BONzzuPpnECxkNzo520jYf1ItEO7HzPSHujcWz5yoRCfulw-aTwor8C3OXaQNS3sDf3s6aW0RRIR9YVdMSCLosM9cZiEBfWP0gFf4NqELddXk9QKtkGpY4sGD4Hti7d3QNoUfhSmShZm2qTCZtysuYzv50QU-ehgsEzJH7krikz_nO-qDVy9GwqAurXy-9pGFHNwI8YZ_l9a46JVIvp8mnFkxWG-8qiL5Uno2dlKEVUisGM94wjvNRsmSIW9HVNeNi2XBAg8GLPNeoTYxpzxlWRG3y9Fq9uMRKmySbhHEBWC7Aak5BJ5-oGWhcLJHGUE_nXZ2Sk56JewBGBaEBSx0mPInc8ScxsfAPaeAuWi0tmsMSs55KZn13Y30sh4WSBBq_UFgIE1h9bdQj_7km9HXi--5gMpEjcAHH8Tw659BEx3B9YgSjhLBLPDBoioagRS7y-910e2s2FZsXf-_bNmmJrndve8_jC68N6nmUpBqAN_Z90WUL_lJvCqrrPyxMdMkfQsuAD9sj--QRqzz-6sXgQcqzTwgbiRQkhhQsZlmhAjrgKUsc7OMa4HrqKG4QCxx_q86WpivjsQu3vGJHeWeOoAuGletw8KUrqSwZs50DN7EykrlsamwFL7o1vfaR8jygAr4hqlfvIGmJpmdmCKs8y6LBDNGEZL_51ofMPiZ74XcpXf6y3xwdJstdCfDMyrPumt8JR337_WCRiobh8_iDfeCjqBU8glsYU8UvyQiLO4yo-kXcP-SLOt527ryYskAZCGdv10L1GWae8XGY4U3vU1ocYUSgj4SjFyTvgKFsI8KNRbfWoZHUV00ps8u5BcLERkjJZyYPgBNW9KD5qB1JqfOgX4chR5KNdueaw6-R1biOF8y5q-kt1LDnZiYSqPyyS_8hOoUc8FTCRUbq24hj68d8GXdZG3TICDuT5JKxXYivZKf9oxeA6JYgYSzBI2Fp50mclelTY2SHNN-Y0kCJ3I2OknXJe8TIj46ETAxr9mIWLdYfsFiiFP8TjGxcbMcx-5XCibuAB7aJVAJ1upYX94vO_LUg5THJ2jfQEW5JKzc35MWQki8e9ic3I069FM9lgToB1F4WruS6cIJ8346Xf_W0by5N9S8BXZ27m6D8EOwL7GwYWGi6MZdZqGTzTyhSVqRwVUf3UlOXwnbjVuOPZ-LAS_sLqu-ABTpu1Su1qepDsH2EC4G-XtfGLsTvw4M4fVDB6oWFNi0io9eYzuHdxi_dCgyXG-GoEz0aEQSL4gzbSaNPaESWdebUFgx3ZAcFlitjpa7AqaTfLQ6yeU1G7-AS8KwJoKrHYzn4uXqHU-BMMQeuS6ye85ws1SZifC3t8vA3l7uBSc9Q7t-kJq-IODqTCTQMhO8ujwplpx61bmjXcZ1jW4RoZJ4rnHXK04Kq2mr2dFxtPqB9905AIU4zJaiEtOIH88THk61mhvrW6KicgKl4CI2uTSYEflBs4lpE1Uy51fYnOO0Oip_bx6NIDiVoTiMC_JN1n7fyUz240L9XlIWR19sTAgsFnCMdmJT6O2jjzCaCDvqojpVDlRVGoHxCp9lfz66FHcdO9lAO76FbZYKISsXK7riZvPUsfdIaJLWzBbMHtTqM-cVMBbiGZup6HC9qofWVWHuRcC7m0VJcs6PHCoZmGWHTrAo6jWhe6c1h6LMMUGsRIhhf47QxRd2TZhbw3gC1plLw0ags9uIrYAZwtBQMQT93kBHDTsFkktQzfRNjHszLSLsfuYe8RBaJ4nLATas6GZVelL2OZuX-gGCVB0v1IdHmk8vwHHLAa8yFXnaNZnjhmaf_yi9OUmLCSljFmLf4hJ1yBcwGmZAL9lT_Ow_rzONSXoJqhjT9kqO6of7L2hE6Yd3OxVGbWqV9u4iJ0hjI8Lv6VTGsCfimm3KxBWN05ur76_hBPzGDrPYCLLGHJUdD0ssJICoHILGb7kmZH0Avix4wq6p-Zsm5deLPriekpkE5y2MtnI--FhDsMMvxnCMPcWgZ_M-f4eKLBTXJTB33EKAhJbmXR8_HGJ96dp_NDn0HmahJpVFd1d6igViVbyzMG_2UEkqhTDsoqilI0P4wFbx4pYKvE0Bxg299_wz0qtpyJ6fVz0BIepCNlI_zZkcC34qGK91kj6fhCkN0ROxSuh8q3YiSeuA2gI-kTbvl9_Sgqraziw8MR476jmeN_iVZARx2PjjODsPC9eodlqBpxXuQb92rSrRr3pG6zVMNHc8h_oODrYokDCvhUK1ersWd5UvbL3usTD9YIaQx_CoxN7RIceN9pIDrDJhwP674noeC-hnw6seqDF90SXkasm_vv1-vdIt7RM8gjtSFeibo1MCngLcNDYdhimArFpXBBdCVUZ7exMpKXKH-WysVBiTQk6lDfeWLKJR-43C4917EoPe_q9HLSyWpR7kJBgDXvmquQAiP1hbUggcWzSr2AYY9AOKPZNK9b9xUtmH1dJ2B3bfZ0jiKmemOo4JS8qFb2SiEQo0FTIwIYTd7bG2l5dy0oky-19rov325t60LCHXFkI3z255OQ6lcoCNUunVwnbreW_EREo2MLbjooUqf2jMgmgSBQ1Kl7FCrYmOUjFt__vBrbL-ozEr_vtUcmFkTtxD832mcITJJBvgLFcyTQJM_XzeQZqh_1G00">
+<meta property="og:image" content="https://www.plantuml.com/plantuml/svg/rPLRKzj6583V-oksVcfd0hpqoGCqROOqp8HaMfiyUQQZo1kZYRmYqYhfeqrAB5ECdU4I6qou109jiHrAOemlzP_HhgGd_aAEjBOnOVe3wYVldlktvnmXXD1jWqewDPFgLt10KOMgE8oSKejbclnJsZd-8qO2YMHIZPZ9nrWFZlnJtZsoMEaOZKmYqqo6aPTAWKqWX3CQwT_VaOo8GX8gZYW9yj2aTnMLOZr6-Eu5prKZKRvpwDRs3MmOYaOGkwWpQzSh7V3o2Ij_SDghh59qDd_loMC4ZcpXs3bjtPECkHbf_aT9VehZ4I66ypp4Yb1Dbn8OOZGMmHNhhB9ihkS1VF5iYfUppbQ3BPxPtJsUhbrbFOaCGmlFKJflXCVW1wTHcOofMa8pwVS6rfyhCfxmvO4OR40Sc8DcKBHlZtZsoDrRZc8zgH29ubvwFyXKP43x0hvnmS_MUuY9HZ7IbSGS3ICfpFAllLIwzn9r2x9arWTMtUVMkVDtBKOUNzEO-LbKSjcsn7No6SInEsLdxPWNQootxYnS-AgTTQYTlwcpWrE-Rbssb-sBb-xU8KjtURd9hFfbEtlPth8RBM-_UDdUfDgy8ez2-Ge1034YX-DOnHH75S1El_dsbgXKl5dqfoXVpK7G68c7TPpKdkCxclPKmH36EMg1XXmS_ukNe3oW5DUc2P0YaZhr6vRDFgqlMRcrGo60fDttQRzQwu1lLE3DlUrzfrMI9MF03U00BN0-3DQjdVFJ1T-my9vR1RQq0mb3gnMMVL21Co7qoYc884ozJ8vLDrdXDJmBNyx0V_0ABSksKu6ritPgDrVuFtl0swt-wtIgmeuLLeIRWODXEsQLUat6yaKlaxSRJMAggl2uzP6l7BhTDRRrzkxqW-d8lL-d7aqzY3fBTPvAtuJgdf-vdHD8xub256FkVa3tIthZSImhVdEEm2A0MoK-4HhM3qt6Y6-2nfKdY6A3WbZLNaHaRHwFYWVx1SSL7SjqLbVHrnF8ppU4w1mc4o6z9tgau1SXX5K3JuI4aRWP0-_ZOzTJy0FUSDpZSCjkv0RS0CgWn2kdLnp40d9EJhxZbKExKV7ntXWgDtCsD5JGAiZdZtMXUR-NnpCJAXTj0i5yBLbLCA4trjt_Pji5BG03gejUOOjr80IATcEJBUqvPosdjIFwr5qvP_cD_feHrFozqTyji2NWnLZv6CtEpY1OC-9B02fUg-XM3q0ba8Xhk_aA92WIUNZzmkwy6WxDyZNtPGUcnodlyCexeGeyQcqtyz7kx48OC1JNC57-WX7JKUrwRwh3dW21stqR34uHKl6zLjwnHaDemhxavR_4q8ibsSy-6oF3RW2kysSJ9i-jRGzXl8r973wUdm40">
+<meta property="og:updated_time" content="2019-03-08T11:51:51.561Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于CAS的单点登录">
-<meta name="twitter:description" content="这是chw的一个测试文档，测试多人协作。">
+<meta name="twitter:title" content="CAS Shiro 单点登录 权限控制">
+<meta name="twitter:description" content="这篇文章，将从登陆、登出流程，详细讲解CAS+Shiro的执行过程。 开始uum：一个基于RBAC（Role-Based Access Control ）的权限系统（CAS client + shiro）sso：CAS server，负责认证授权  登陆流程: 这里将以时序图的方式展现。">
+<meta name="twitter:image" content="https://www.plantuml.com/plantuml/svg/xLbjKnDP5lw-lwBBsjfAB0WAEevHc840oXOwbW6TMc9PJUT2UkZSpdHtG6Phgu0HIJ2yE888uWkMC8mAmMM5641-ZEbEyyc_iEVUssaweHDqQpukLY7TzznpddlUpssEuxZlLOrNj7XK-Wjd_NI8ceJyN7v-HnzTDjuFvrVlXx2zoiSr6SUZtKYnNndlfypV4_hyAbVTmCNZKTZxzcqkCsIyNJBNzm_craEOYsXQJFNNrC2oJv2ZzbuiQuYJ-v52DwenHSIzrT5-mNSdAkKoQmUZ4_czzLpsNWXVXBV-VX4DL0iorXHPaf3IOFE1tLmrYBUn-Bc3iGbzVK6VVc2_gu2O44yzCDFRnhkHet1h-3A0pPTlr8YeoAsYf275kBzY95w7yEbFGyD__ISVZehu6gz5_bKZy2fNpy7l4AujNPFaNX73AYWs8eHmdSkw7DU0WFqHmcTAAKwUXDMuYXG0RYI7SZlBPdgP7KNVk0SGE-FHJbXc8CtzCMFdLPdp79A1yZ_lfjHuzqz8q7ozIBi6fX7462zvlFNrE2v98QplFTIJ4_cPLIEnRSozCBDlSZjxkVqbOpZzHORH4niENTVKgAhi4p3Jo7U0f5yKK3rPfgksBMge8lKFMqxRgaYxBSXoduZyjrKnNE_p-JpETVtUFBWpDHQd8bKLPSo9OQ-xIm0G__-6oqMlX1dHA-QZw1glgWEo4Wv6rO22mWXh8Yzz6fe67UQoayRaiZ6pPIwjwXEpnko6CR7-QUY1pH7uK4rIS4RoTtCfHM9qRxOGevo8HSAlLP87WaYBnne53Oxf2yijTv0Grv37MmRUJTJTgOcIwel5jGvHw4FQ9OK7RBYNFRNXe237aEhl0eVgkDHXp7pK5rUf7F8-jxS81z2VFmUdyTYn3nxXlGMedCnlyWe6hW5cAC9j0Dwmnnky54SLE9Vo2Z93K2wMKIhlzZ3muDObGlNVKaKChgEVuqZL0f1dq1tDoQKgX26ySX_tWSgP864flt0NKgc6u4zp_maOHq-yCXwjUTtjfxbeEH11GX-WEtYTCjF3WBICjNAP2NtjCI3ulBi0eW14ByWTu0SBk0aVsod03CPimYQ5q8R40VH15WI7T8j99rs4Loq5EzYvdwMiT61MvWWWpDhrDqlpVZqnNtGOIxfwXSTyBuf2g1IVIvzUiRU088jD8sHHMH5_uOdd7ulyc4t-BcOAY-nMcSEOAyFwy0BONzzuPpnECxkNzo520jYf1ItEO7HzPSHujcWz5yoRCfulw-aTwor8C3OXaQNS3sDf3s6aW0RRIR9YVdMSCLosM9cZiEBfWP0gFf4NqELddXk9QKtkGpY4sGD4Hti7d3QNoUfhSmShZm2qTCZtysuYzv50QU-ehgsEzJH7krikz_nO-qDVy9GwqAurXy-9pGFHNwI8YZ_l9a46JVIvp8mnFkxWG-8qiL5Uno2dlKEVUisGM94wjvNRsmSIW9HVNeNi2XBAg8GLPNeoTYxpzxlWRG3y9Fq9uMRKmySbhHEBWC7Aak5BJ5-oGWhcLJHGUE_nXZ2Sk56JewBGBaEBSx0mPInc8ScxsfAPaeAuWi0tmsMSs55KZn13Y30sh4WSBBq_UFgIE1h9bdQj_7km9HXi--5gMpEjcAHH8Tw659BEx3B9YgSjhLBLPDBoioagRS7y-910e2s2FZsXf-_bNmmJrndve8_jC68N6nmUpBqAN_Z90WUL_lJvCqrrPyxMdMkfQsuAD9sj--QRqzz-6sXgQcqzTwgbiRQkhhQsZlmhAjrgKUsc7OMa4HrqKG4QCxx_q86WpivjsQu3vGJHeWeOoAuGletw8KUrqSwZs50DN7EykrlsamwFL7o1vfaR8jygAr4hqlfvIGmJpmdmCKs8y6LBDNGEZL_51ofMPiZ74XcpXf6y3xwdJstdCfDMyrPumt8JR337_WCRiobh8_iDfeCjqBU8glsYU8UvyQiLO4yo-kXcP-SLOt527ryYskAZCGdv10L1GWae8XGY4U3vU1ocYUSgj4SjFyTvgKFsI8KNRbfWoZHUV00ps8u5BcLERkjJZyYPgBNW9KD5qB1JqfOgX4chR5KNdueaw6-R1biOF8y5q-kt1LDnZiYSqPyyS_8hOoUc8FTCRUbq24hj68d8GXdZG3TICDuT5JKxXYivZKf9oxeA6JYgYSzBI2Fp50mclelTY2SHNN-Y0kCJ3I2OknXJe8TIj46ETAxr9mIWLdYfsFiiFP8TjGxcbMcx-5XCibuAB7aJVAJ1upYX94vO_LUg5THJ2jfQEW5JKzc35MWQki8e9ic3I069FM9lgToB1F4WruS6cIJ8346Xf_W0by5N9S8BXZ27m6D8EOwL7GwYWGi6MZdZqGTzTyhSVqRwVUf3UlOXwnbjVuOPZ-LAS_sLqu-ABTpu1Su1qepDsH2EC4G-XtfGLsTvw4M4fVDB6oWFNi0io9eYzuHdxi_dCgyXG-GoEz0aEQSL4gzbSaNPaESWdebUFgx3ZAcFlitjpa7AqaTfLQ6yeU1G7-AS8KwJoKrHYzn4uXqHU-BMMQeuS6ye85ws1SZifC3t8vA3l7uBSc9Q7t-kJq-IODqTCTQMhO8ujwplpx61bmjXcZ1jW4RoZJ4rnHXK04Kq2mr2dFxtPqB9905AIU4zJaiEtOIH88THk61mhvrW6KicgKl4CI2uTSYEflBs4lpE1Uy51fYnOO0Oip_bx6NIDiVoTiMC_JN1n7fyUz240L9XlIWR19sTAgsFnCMdmJT6O2jjzCaCDvqojpVDlRVGoHxCp9lfz66FHcdO9lAO76FbZYKISsXK7riZvPUsfdIaJLWzBbMHtTqM-cVMBbiGZup6HC9qofWVWHuRcC7m0VJcs6PHCoZmGWHTrAo6jWhe6c1h6LMMUGsRIhhf47QxRd2TZhbw3gC1plLw0ags9uIrYAZwtBQMQT93kBHDTsFkktQzfRNjHszLSLsfuYe8RBaJ4nLATas6GZVelL2OZuX-gGCVB0v1IdHmk8vwHHLAa8yFXnaNZnjhmaf_yi9OUmLCSljFmLf4hJ1yBcwGmZAL9lT_Ow_rzONSXoJqhjT9kqO6of7L2hE6Yd3OxVGbWqV9u4iJ0hjI8Lv6VTGsCfimm3KxBWN05ur76_hBPzGDrPYCLLGHJUdD0ssJICoHILGb7kmZH0Avix4wq6p-Zsm5deLPriekpkE5y2MtnI--FhDsMMvxnCMPcWgZ_M-f4eKLBTXJTB33EKAhJbmXR8_HGJ96dp_NDn0HmahJpVFd1d6igViVbyzMG_2UEkqhTDsoqilI0P4wFbx4pYKvE0Bxg299_wz0qtpyJ6fVz0BIepCNlI_zZkcC34qGK91kj6fhCkN0ROxSuh8q3YiSeuA2gI-kTbvl9_Sgqraziw8MR476jmeN_iVZARx2PjjODsPC9eodlqBpxXuQb92rSrRr3pG6zVMNHc8h_oODrYokDCvhUK1ersWd5UvbL3usTD9YIaQx_CoxN7RIceN9pIDrDJhwP674noeC-hnw6seqDF90SXkasm_vv1-vdIt7RM8gjtSFeibo1MCngLcNDYdhimArFpXBBdCVUZ7exMpKXKH-WysVBiTQk6lDfeWLKJR-43C4917EoPe_q9HLSyWpR7kJBgDXvmquQAiP1hbUggcWzSr2AYY9AOKPZNK9b9xUtmH1dJ2B3bfZ0jiKmemOo4JS8qFb2SiEQo0FTIwIYTd7bG2l5dy0oky-19rov325t60LCHXFkI3z255OQ6lcoCNUunVwnbreW_EREo2MLbjooUqf2jMgmgSBQ1Kl7FCrYmOUjFt__vBrbL-ozEr_vtUcmFkTtxD832mcITJJBvgLFcyTQJM_XzeQZqh_1G00">
 
 
 
@@ -98,12 +99,12 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: 'undefined',
       author: '博主'
@@ -124,9 +125,54 @@
 
 
 
+<form class="file-upload-form" onsubmit="return uploadSubmitForm();" id="hexo_form_xqj">
+  <input type="file" id="file-upload-aotohexo"><br>
+  <input type="submit" value="提交">
+  <input type="reset" value="重置">
+</form>
 
 
-  <title>基于CAS的单点登录 | 侠骨蛋子</title>
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入管理员密码') !== ''){
+                alert('密码不正确,请询问侠骨蛋子成员！！');
+                history.back();
+            }
+        }
+        
+    })();
+</script>
+
+<script type="text/javascript">
+
+    var xhr;
+
+    function uploadSubmitForm(){
+        //debugger
+        
+        var fileObj = document.getElementById("file-upload-aotohexo").files[0];
+        
+        //var url = "https://localhost:8088/hexo/file/up";
+
+        var url = "https://45.76.168.248:8088/hexo/file/up";
+        var form = new FormData(); // FormData 对象
+        form.append("file", fileObj); // 文件对象
+
+        xhr = new XMLHttpRequest();  // XMLHttpRequest 对象
+        xhr.open("post", url, false); //post方式，url为服务器请求地址，true 该参数规定请求是否异步处理。
+        xhr.send(form); //开始上传，发送form数据
+
+
+    }
+</script>
+
+
+
+
+
+  <title>CAS Shiro 单点登录 权限控制 | 侠骨蛋子</title>
   
 
 
@@ -258,7 +304,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xia gu team">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/touxaing.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -270,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">基于CAS的单点登录</h1>
+          <h1 class="post-title" itemprop="name headline">CAS Shiro 单点登录 权限控制</h1>
         
 
         <div class="post-meta">
@@ -330,7 +376,31 @@
       
 
       
-        <p>这是chw的一个测试文档，测试多人协作。</p>
+        <p>这篇文章，将从登陆、登出流程，详细讲解CAS+Shiro的执行过程。</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>uum：一个基于RBAC（Role-Based Access Control ）的权限系统（CAS client + shiro）<br>sso：CAS server，负责认证授权</p>
+<blockquote>
+<h3 id="登陆流程"><a href="#登陆流程" class="headerlink" title="登陆流程:"></a>登陆流程:</h3></blockquote>
+<p>这里将以时序图的方式展现。</p>
+<a id="more"></a>
+<p><img src="https://www.plantuml.com/plantuml/svg/xLbjKnDP5lw-lwBBsjfAB0WAEevHc840oXOwbW6TMc9PJUT2UkZSpdHtG6Phgu0HIJ2yE888uWkMC8mAmMM5641-ZEbEyyc_iEVUssaweHDqQpukLY7TzznpddlUpssEuxZlLOrNj7XK-Wjd_NI8ceJyN7v-HnzTDjuFvrVlXx2zoiSr6SUZtKYnNndlfypV4_hyAbVTmCNZKTZxzcqkCsIyNJBNzm_craEOYsXQJFNNrC2oJv2ZzbuiQuYJ-v52DwenHSIzrT5-mNSdAkKoQmUZ4_czzLpsNWXVXBV-VX4DL0iorXHPaf3IOFE1tLmrYBUn-Bc3iGbzVK6VVc2_gu2O44yzCDFRnhkHet1h-3A0pPTlr8YeoAsYf275kBzY95w7yEbFGyD__ISVZehu6gz5_bKZy2fNpy7l4AujNPFaNX73AYWs8eHmdSkw7DU0WFqHmcTAAKwUXDMuYXG0RYI7SZlBPdgP7KNVk0SGE-FHJbXc8CtzCMFdLPdp79A1yZ_lfjHuzqz8q7ozIBi6fX7462zvlFNrE2v98QplFTIJ4_cPLIEnRSozCBDlSZjxkVqbOpZzHORH4niENTVKgAhi4p3Jo7U0f5yKK3rPfgksBMge8lKFMqxRgaYxBSXoduZyjrKnNE_p-JpETVtUFBWpDHQd8bKLPSo9OQ-xIm0G__-6oqMlX1dHA-QZw1glgWEo4Wv6rO22mWXh8Yzz6fe67UQoayRaiZ6pPIwjwXEpnko6CR7-QUY1pH7uK4rIS4RoTtCfHM9qRxOGevo8HSAlLP87WaYBnne53Oxf2yijTv0Grv37MmRUJTJTgOcIwel5jGvHw4FQ9OK7RBYNFRNXe237aEhl0eVgkDHXp7pK5rUf7F8-jxS81z2VFmUdyTYn3nxXlGMedCnlyWe6hW5cAC9j0Dwmnnky54SLE9Vo2Z93K2wMKIhlzZ3muDObGlNVKaKChgEVuqZL0f1dq1tDoQKgX26ySX_tWSgP864flt0NKgc6u4zp_maOHq-yCXwjUTtjfxbeEH11GX-WEtYTCjF3WBICjNAP2NtjCI3ulBi0eW14ByWTu0SBk0aVsod03CPimYQ5q8R40VH15WI7T8j99rs4Loq5EzYvdwMiT61MvWWWpDhrDqlpVZqnNtGOIxfwXSTyBuf2g1IVIvzUiRU088jD8sHHMH5_uOdd7ulyc4t-BcOAY-nMcSEOAyFwy0BONzzuPpnECxkNzo520jYf1ItEO7HzPSHujcWz5yoRCfulw-aTwor8C3OXaQNS3sDf3s6aW0RRIR9YVdMSCLosM9cZiEBfWP0gFf4NqELddXk9QKtkGpY4sGD4Hti7d3QNoUfhSmShZm2qTCZtysuYzv50QU-ehgsEzJH7krikz_nO-qDVy9GwqAurXy-9pGFHNwI8YZ_l9a46JVIvp8mnFkxWG-8qiL5Uno2dlKEVUisGM94wjvNRsmSIW9HVNeNi2XBAg8GLPNeoTYxpzxlWRG3y9Fq9uMRKmySbhHEBWC7Aak5BJ5-oGWhcLJHGUE_nXZ2Sk56JewBGBaEBSx0mPInc8ScxsfAPaeAuWi0tmsMSs55KZn13Y30sh4WSBBq_UFgIE1h9bdQj_7km9HXi--5gMpEjcAHH8Tw659BEx3B9YgSjhLBLPDBoioagRS7y-910e2s2FZsXf-_bNmmJrndve8_jC68N6nmUpBqAN_Z90WUL_lJvCqrrPyxMdMkfQsuAD9sj--QRqzz-6sXgQcqzTwgbiRQkhhQsZlmhAjrgKUsc7OMa4HrqKG4QCxx_q86WpivjsQu3vGJHeWeOoAuGletw8KUrqSwZs50DN7EykrlsamwFL7o1vfaR8jygAr4hqlfvIGmJpmdmCKs8y6LBDNGEZL_51ofMPiZ74XcpXf6y3xwdJstdCfDMyrPumt8JR337_WCRiobh8_iDfeCjqBU8glsYU8UvyQiLO4yo-kXcP-SLOt527ryYskAZCGdv10L1GWae8XGY4U3vU1ocYUSgj4SjFyTvgKFsI8KNRbfWoZHUV00ps8u5BcLERkjJZyYPgBNW9KD5qB1JqfOgX4chR5KNdueaw6-R1biOF8y5q-kt1LDnZiYSqPyyS_8hOoUc8FTCRUbq24hj68d8GXdZG3TICDuT5JKxXYivZKf9oxeA6JYgYSzBI2Fp50mclelTY2SHNN-Y0kCJ3I2OknXJe8TIj46ETAxr9mIWLdYfsFiiFP8TjGxcbMcx-5XCibuAB7aJVAJ1upYX94vO_LUg5THJ2jfQEW5JKzc35MWQki8e9ic3I069FM9lgToB1F4WruS6cIJ8346Xf_W0by5N9S8BXZ27m6D8EOwL7GwYWGi6MZdZqGTzTyhSVqRwVUf3UlOXwnbjVuOPZ-LAS_sLqu-ABTpu1Su1qepDsH2EC4G-XtfGLsTvw4M4fVDB6oWFNi0io9eYzuHdxi_dCgyXG-GoEz0aEQSL4gzbSaNPaESWdebUFgx3ZAcFlitjpa7AqaTfLQ6yeU1G7-AS8KwJoKrHYzn4uXqHU-BMMQeuS6ye85ws1SZifC3t8vA3l7uBSc9Q7t-kJq-IODqTCTQMhO8ujwplpx61bmjXcZ1jW4RoZJ4rnHXK04Kq2mr2dFxtPqB9905AIU4zJaiEtOIH88THk61mhvrW6KicgKl4CI2uTSYEflBs4lpE1Uy51fYnOO0Oip_bx6NIDiVoTiMC_JN1n7fyUz240L9XlIWR19sTAgsFnCMdmJT6O2jjzCaCDvqojpVDlRVGoHxCp9lfz66FHcdO9lAO76FbZYKISsXK7riZvPUsfdIaJLWzBbMHtTqM-cVMBbiGZup6HC9qofWVWHuRcC7m0VJcs6PHCoZmGWHTrAo6jWhe6c1h6LMMUGsRIhhf47QxRd2TZhbw3gC1plLw0ags9uIrYAZwtBQMQT93kBHDTsFkktQzfRNjHszLSLsfuYe8RBaJ4nLATas6GZVelL2OZuX-gGCVB0v1IdHmk8vwHHLAa8yFXnaNZnjhmaf_yi9OUmLCSljFmLf4hJ1yBcwGmZAL9lT_Ow_rzONSXoJqhjT9kqO6of7L2hE6Yd3OxVGbWqV9u4iJ0hjI8Lv6VTGsCfimm3KxBWN05ur76_hBPzGDrPYCLLGHJUdD0ssJICoHILGb7kmZH0Avix4wq6p-Zsm5deLPriekpkE5y2MtnI--FhDsMMvxnCMPcWgZ_M-f4eKLBTXJTB33EKAhJbmXR8_HGJ96dp_NDn0HmahJpVFd1d6igViVbyzMG_2UEkqhTDsoqilI0P4wFbx4pYKvE0Bxg299_wz0qtpyJ6fVz0BIepCNlI_zZkcC34qGK91kj6fhCkN0ROxSuh8q3YiSeuA2gI-kTbvl9_Sgqraziw8MR476jmeN_iVZARx2PjjODsPC9eodlqBpxXuQb92rSrRr3pG6zVMNHc8h_oODrYokDCvhUK1ersWd5UvbL3usTD9YIaQx_CoxN7RIceN9pIDrDJhwP674noeC-hnw6seqDF90SXkasm_vv1-vdIt7RM8gjtSFeibo1MCngLcNDYdhimArFpXBBdCVUZ7exMpKXKH-WysVBiTQk6lDfeWLKJR-43C4917EoPe_q9HLSyWpR7kJBgDXvmquQAiP1hbUggcWzSr2AYY9AOKPZNK9b9xUtmH1dJ2B3bfZ0jiKmemOo4JS8qFb2SiEQo0FTIwIYTd7bG2l5dy0oky-19rov325t60LCHXFkI3z255OQ6lcoCNUunVwnbreW_EREo2MLbjooUqf2jMgmgSBQ1Kl7FCrYmOUjFt__vBrbL-ozEr_vtUcmFkTtxD832mcITJJBvgLFcyTQJM_XzeQZqh_1G00"></p>
+<blockquote>
+<h3 id="登出流程"><a href="#登出流程" class="headerlink" title="登出流程:"></a>登出流程:</h3></blockquote>
+<p>这里将以时序图的方式展现。<br><img src="https://www.plantuml.com/plantuml/svg/rPLRKzj6583V-oksVcfd0hpqoGCqROOqp8HaMfiyUQQZo1kZYRmYqYhfeqrAB5ECdU4I6qou109jiHrAOemlzP_HhgGd_aAEjBOnOVe3wYVldlktvnmXXD1jWqewDPFgLt10KOMgE8oSKejbclnJsZd-8qO2YMHIZPZ9nrWFZlnJtZsoMEaOZKmYqqo6aPTAWKqWX3CQwT_VaOo8GX8gZYW9yj2aTnMLOZr6-Eu5prKZKRvpwDRs3MmOYaOGkwWpQzSh7V3o2Ij_SDghh59qDd_loMC4ZcpXs3bjtPECkHbf_aT9VehZ4I66ypp4Yb1Dbn8OOZGMmHNhhB9ihkS1VF5iYfUppbQ3BPxPtJsUhbrbFOaCGmlFKJflXCVW1wTHcOofMa8pwVS6rfyhCfxmvO4OR40Sc8DcKBHlZtZsoDrRZc8zgH29ubvwFyXKP43x0hvnmS_MUuY9HZ7IbSGS3ICfpFAllLIwzn9r2x9arWTMtUVMkVDtBKOUNzEO-LbKSjcsn7No6SInEsLdxPWNQootxYnS-AgTTQYTlwcpWrE-Rbssb-sBb-xU8KjtURd9hFfbEtlPth8RBM-_UDdUfDgy8ez2-Ge1034YX-DOnHH75S1El_dsbgXKl5dqfoXVpK7G68c7TPpKdkCxclPKmH36EMg1XXmS_ukNe3oW5DUc2P0YaZhr6vRDFgqlMRcrGo60fDttQRzQwu1lLE3DlUrzfrMI9MF03U00BN0-3DQjdVFJ1T-my9vR1RQq0mb3gnMMVL21Co7qoYc884ozJ8vLDrdXDJmBNyx0V_0ABSksKu6ritPgDrVuFtl0swt-wtIgmeuLLeIRWODXEsQLUat6yaKlaxSRJMAggl2uzP6l7BhTDRRrzkxqW-d8lL-d7aqzY3fBTPvAtuJgdf-vdHD8xub256FkVa3tIthZSImhVdEEm2A0MoK-4HhM3qt6Y6-2nfKdY6A3WbZLNaHaRHwFYWVx1SSL7SjqLbVHrnF8ppU4w1mc4o6z9tgau1SXX5K3JuI4aRWP0-_ZOzTJy0FUSDpZSCjkv0RS0CgWn2kdLnp40d9EJhxZbKExKV7ntXWgDtCsD5JGAiZdZtMXUR-NnpCJAXTj0i5yBLbLCA4trjt_Pji5BG03gejUOOjr80IATcEJBUqvPosdjIFwr5qvP_cD_feHrFozqTyji2NWnLZv6CtEpY1OC-9B02fUg-XM3q0ba8Xhk_aA92WIUNZzmkwy6WxDyZNtPGUcnodlyCexeGeyQcqtyz7kx48OC1JNC57-WX7JKUrwRwh3dW21stqR34uHKl6zLjwnHaDemhxavR_4q8ibsSy-6oF3RW2kysSJ9i-jRGzXl8r973wUdm40"></p>
+<p><strong>局限性：</strong></p>
+<blockquote>
+<ul>
+<li>采用shiro，各业务系统保存了用户信息，无统一保存用户信息容器，当用户改变，无法立即全局生效；并且退出时，需要发送MQ去清空各业务系统的信息，将导致MQ压力增大。</li>
+<li>若设计不合理，SSO认证过程会很长，并且用户授权信息将很大，增加SSO服务压力。</li>
+</ul>
+</blockquote>
+<p><strong>个人感悟</strong><br>针对上面现阶段系统的局限性，以下是个人优化想法：</p>
+<blockquote>
+<ul>
+<li>认证过程，只验证用户的登录名密码。CAS client根据需要，再调用服务去获取用户授权信息，并将信息统一存放至Redis。</li>
+<li>用户退出，清空Redis中的用户信息，</li>
+</ul>
+</blockquote>
+<p>参考博客：<br><a href="https://my.oschina.net/u/2415799/blog/865526" target="_blank" rel="noopener">shiro 登录授权过程详细解析</a><br><a href="https://www.codetw.com/lyxepf.html" target="_blank" rel="noopener">CAS 4.1.10 版本服務端原始碼解讀</a><br><a href="https://www.jianshu.com/p/5ef9407c71af" target="_blank" rel="noopener">从http验证流程解析CAS单点登录</a><br><a href="https://blog.csdn.net/qq_34246546/article/details/79493208" target="_blank" rel="noopener">CAS的详细登录流程</a><br><a href="https://juejin.im/post/5b8116afe51d4538d23db11e" target="_blank" rel="noopener">前端关于单点登录SSO的知识</a><br><!--more--></p>
 
       
     </div>
@@ -345,6 +415,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CAS-Shiro-单点登录-权限控制/" rel="tag"># CAS Shiro 单点登录 权限控制</a>
+          
+        </div>
       
 
       
@@ -364,6 +440,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/08/jenkens自动部署222/" rel="prev" title="Jenkins全自动部署攻略sssss">
+                Jenkins全自动部署攻略sssss <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -418,10 +498,21 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxaing.jpg" alt="xia gu team">
             
               <p class="site-author-name" itemprop="name">xia gu team</p>
               <p class="site-description motion-element" itemprop="description">江西农业大学12级</p>
@@ -434,7 +525,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -443,11 +534,48 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
 
           </nav>
 
           
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/xiagudanzi" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://juejin.im" target="_blank" title="掘金">
+                      
+                        <i class="fa fa-fw fa-anchor"></i>掘金</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://youtube.com" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -461,6 +589,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-number">1.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#登陆流程"><span class="nav-number">1.1.</span> <span class="nav-text">登陆流程:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登出流程"><span class="nav-number">1.2.</span> <span class="nav-text">登出流程:</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -493,7 +637,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 

@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,18 +77,18 @@
 
 
 
-<meta name="description" content="搭建过程参考使用者需要做的事情:1.本地安装node.js2.本地安装hexo3.本地clone主题next4.协同工作安装过程可能碰到的问题：1.hexo安装不上">
+<meta name="description" content="搭建过程参考使用者需要做的事情:  本地安装node.js 本地安装hexo 本地clone主题next 协同工作">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="本站点搭建">
 <meta property="og:url" content="https://xiagudanzi.github.io/2019/03/03/本站点搭建/index.html">
 <meta property="og:site_name" content="侠骨蛋子">
-<meta property="og:description" content="搭建过程参考使用者需要做的事情:1.本地安装node.js2.本地安装hexo3.本地clone主题next4.协同工作安装过程可能碰到的问题：1.hexo安装不上">
+<meta property="og:description" content="搭建过程参考使用者需要做的事情:  本地安装node.js 本地安装hexo 本地clone主题next 协同工作">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-05T03:51:30.318Z">
+<meta property="og:updated_time" content="2019-03-08T11:12:28.572Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="本站点搭建">
-<meta name="twitter:description" content="搭建过程参考使用者需要做的事情:1.本地安装node.js2.本地安装hexo3.本地clone主题next4.协同工作安装过程可能碰到的问题：1.hexo安装不上">
+<meta name="twitter:description" content="搭建过程参考使用者需要做的事情:  本地安装node.js 本地安装hexo 本地clone主题next 协同工作">
 
 
 
@@ -98,12 +96,12 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: 'undefined',
       author: '博主'
@@ -121,6 +119,51 @@
 
 
   <link rel="canonical" href="https://xiagudanzi.github.io/2019/03/03/本站点搭建/">
+
+
+
+<form class="file-upload-form" onsubmit="return uploadSubmitForm();" id="hexo_form_xqj">
+  <input type="file" id="file-upload-aotohexo"><br>
+  <input type="submit" value="提交">
+  <input type="reset" value="重置">
+</form>
+
+
+
+<script>
+    (function(){
+        if('123'){
+            if (prompt('请输入管理员密码') !== '123'){
+                alert('密码不正确,请询问侠骨蛋子成员！！');
+                history.back();
+            }
+        }
+        
+    })();
+</script>
+
+<script type="text/javascript">
+
+    var xhr;
+
+    function uploadSubmitForm(){
+        //debugger
+        
+        var fileObj = document.getElementById("file-upload-aotohexo").files[0];
+        
+        //var url = "https://localhost:8088/hexo/file/up";
+
+        var url = "https://45.76.168.248:8088/hexo/file/up";
+        var form = new FormData(); // FormData 对象
+        form.append("file", fileObj); // 文件对象
+
+        xhr = new XMLHttpRequest();  // XMLHttpRequest 对象
+        xhr.open("post", url, false); //post方式，url为服务器请求地址，true 该参数规定请求是否异步处理。
+        xhr.send(form); //开始上传，发送form数据
+
+
+    }
+</script>
 
 
 
@@ -258,7 +301,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xia gu team">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/touxaing.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -330,8 +373,25 @@
       
 
       
-        <p><a href="https://runjaelyn.github.io/2017/07/15/themeBlog/" target="_blank" rel="noopener">搭建过程参考</a><br>使用者需要做的事情:<br>1.本地安装node.js<br>2.本地安装hexo<br>3.<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">本地clone主题next</a><br>4.<a href="http://simonenfp.github.io/2017/09/13/hexo博客多电脑协同发布/" target="_blank" rel="noopener">协同工作</a><br>安装过程可能碰到的问题：<br>1.<a href="https://www.itfanr.cc/2017/10/27/problems-for-configuring-hexo-blog-in-mac/" target="_blank" rel="noopener">hexo安装不上</a></p>
-
+        <p><a href="https://runjaelyn.github.io/2017/07/15/themeBlog/" target="_blank" rel="noopener">搭建过程参考</a><br>使用者需要做的事情:</p>
+<ol>
+<li>本地安装node.js</li>
+<li>本地安装hexo</li>
+<li><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">本地clone主题next</a></li>
+<li><a href="http://simonenfp.github.io/2017/09/13/hexo博客多电脑协同发布/" target="_blank" rel="noopener">协同工作</a><a id="more"></a></li>
+<li>安装过程可能碰到的问题：<br>1.<a href="https://www.itfanr.cc/2017/10/27/problems-for-configuring-hexo-blog-in-mac/" target="_blank" rel="noopener">hexo安装不上</a></li>
+<li>如何支持时序图<br>1.安装 npm install –save hexo-filter-plantuml<br>2.在站点_config.yml文件配置，在文件末尾添加下段代码</li>
+</ol>
+<pre><code>sequence:
+  webfont:     https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.27/webfontloader.js
+  snap:        https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js
+  underscore:  https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js
+  sequence:    https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js
+  css: # optional, the url for css, such as hand drawn theme
+  options:
+    theme:
+    css_class:
+</code></pre>
       
     </div>
     
@@ -361,8 +421,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/05/基于CAS的单点登录/" rel="prev" title="基于CAS的单点登录">
-                基于CAS的单点登录 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/05/基于CAS的单点登录/" rel="prev" title="CAS Shiro 单点登录 权限控制">
+                CAS Shiro 单点登录 权限控制 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -423,6 +483,8 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image" src="/images/touxaing.jpg" alt="xia gu team">
+            
               <p class="site-author-name" itemprop="name">xia gu team</p>
               <p class="site-description motion-element" itemprop="description">江西农业大学12级</p>
           </div>
@@ -434,7 +496,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -443,11 +505,48 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
 
           </nav>
 
           
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/xiagudanzi" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://juejin.im" target="_blank" title="掘金">
+                      
+                        <i class="fa fa-fw fa-anchor"></i>掘金</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://youtube.com" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -493,7 +592,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
