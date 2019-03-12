@@ -2,6 +2,7 @@
 title: CAS Shiro 单点登录 权限控制
 date: 2019-03-05 14:25:22
 tags: CAS Shiro 单点登录 权限控制
+categories: 单点登录
 ---
 这篇文章，将从登陆、登出流程，详细讲解CAS+Shiro的执行过程。
 ## 开始
